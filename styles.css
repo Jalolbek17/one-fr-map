@@ -1,0 +1,223 @@
+/* RULES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+/* FLEX ALIGN */
+
+body, .header, .travel, .infos, .open-map {
+    display: flex;
+    align-items: center;
+}
+
+.header, .travel {
+    justify-content: space-between;
+}
+
+/* SEMI BOLD */
+
+.logo-google, .city, .info-name, .start, .step-infos p {
+    font-weight: 500;
+}
+
+/* MAIN */
+
+body {
+    height: 100vh;
+    background: #3E6CF6;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,.1);
+    max-width: 395px;
+    width: 100%;
+}
+
+.header {
+    padding: 1.7rem;
+}
+
+.icon {
+    width: 22px;
+    cursor: pointer;
+    opacity: .4;
+    transition: .1s;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
+.logo-google {
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.map {
+    background: linear-gradient(rgba(62, 108, 246, 0.7), rgba(62, 108, 246, 0.7)), url(img/map.png) no-repeat 0;
+    background-size: cover;
+    color: #fff;
+    padding: 2.15rem calc(1.7rem + 8px) 2.75rem calc(1.7rem + 8px);
+    margin: 0 -8px;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
+    position: relative;
+}
+
+.travel {
+    margin-bottom: 1rem;
+}
+
+.distance-ctn {
+    flex-grow: .8;
+    position: relative;
+}
+
+.distance-ctn::after {
+    content: url(img/car.svg);
+    transform: scale(.6);
+    position: absolute;
+    top: -24px;
+    left: calc(30% - 8px);
+}
+
+.distance {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #fff 32%, rgba(255,255,255,.3) 32%);
+    position: relative;
+}
+
+.distance::before, .distance::after {
+    content: "";
+    background: #fff;
+    position: absolute;
+    top: -2px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.distance::before {
+    left: -3px;
+}
+
+.distance::after {
+    right: -5px;
+}
+
+.time {
+    width: 50%;
+}
+
+.info-name {
+    text-transform: uppercase;
+}
+
+.open-map {
+    position: absolute;
+    bottom: -15px;
+    right: 1.8rem;
+    background: #3E6CF6;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: .6rem;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.open-map:hover {
+    background: rgb(80, 123, 252);
+}
+
+.open-map span {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.open-map img {
+    height: 1rem;
+    margin-right: .6rem;
+}
+
+.ride {
+    padding: 2rem 0 .5rem 1.7rem;
+}
+
+.start {
+    margin-bottom: 1.8rem;
+}
+
+.step {
+    display: flex;
+    margin: 1.75rem 0;
+}
+
+.step img {
+    margin-right: 1.75rem;
+    width: 24px;
+}
+
+.step-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 33px;
+}
+
+.step-infos small {
+    color: #888;
+    font-size: .85rem;
+}
+
+.step-infos p {
+    font-size: .95rem;
+}
+
+.streetview {
+    background: url(img/streetview.jpg) no-repeat 0;
+    background-size: cover;
+    border-radius: 3px;
+    height: 4.5rem;
+    padding: .55rem;
+    margin-left: -.5rem;
+    cursor: pointer;
+}
+
+.streetview img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 400px) {
+    .container {
+        max-width: 100%;
+        min-width: 300px;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .map {
+        padding: 3.5rem calc(1.7rem + 8px) 4rem calc(1.7rem + 8px);
+    }
+
+    .streetview {
+        height: 10rem;
+    }
+}
